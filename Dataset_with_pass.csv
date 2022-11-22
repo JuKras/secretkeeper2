@@ -1,0 +1,1298 @@
+,Input,Output,Lang
+0,"MailMessage newmsg = new MailMessage(mailfrom, mailto);
+newmsg.IsBodyHtml = true;
+newmsg.Subject = ""Job Portal account"";
+newmsg.Body = ""Hello "" + reader[UserId].ToString() + "",<br /><br /> Please reset your company user account password by entering <u>"" + Session[num] + ""</u><br /><br />Thank you"";
+SmtpClient smtps = new SmtpClient(""smtp.gmail.com"", 587);
+smtps.UseDefaultCredentials = false;
+smtps.Credentials = new NetworkCredential(<EMAIL>, ""Elvina2"");
+smtps.EnableSsl = true;
+smtps.Send(newmsg);
+}
+catch (Exception ex)
+{
+}",1,cs
+1,"break;
+}
+try
+{
+MailMessage mail = new MailMessage();
+SmtpClient SmtpServer = new SmtpClient(""smtp.gmail.com"");
+mail.From = new MailAddress(<EMAIL>, ""ElviebriaN91"");
+//mail.To.Add(<EMAIL>);
+//mail.To.Add(email);
+mail.Subject = ""Secret Santa"";
+mail.Body = ""Hej "" + giftGiver + message + GiftReciever;
+SmtpServer.Port = 587;
+SmtpServer.UseDefaultCredentials = false;",1,cs
+2,"//mail.To.Add(<EMAIL>);
+//mail.To.Add(email);
+mail.Subject = ""Secret Santa"";
+mail.Body = ""Hej "" + giftGiver + message + GiftReciever;
+SmtpServer.Port = 587;
+SmtpServer.UseDefaultCredentials = false;
+SmtpServer.Credentials = new System.Net.NetworkCredential(<EMAIL>, ""Elusonanoored3"");
+SmtpServer.EnableSsl = true;
+//SmtpServer.Send(mail);
+}
+catch (Exception ex)
+{
+MessageBox.Show(ex.ToString());",1,cs
+3,"// <EMAIL>, //Email of customer support employee
+// g.Email,
+// ""Email Received by "" + g.Name,
+// g.Message,
+// ""smtp.gmail.com"",
+// 587,
+// ""Eltrain7"",
+// RequestNumber,
+// true);
+SendEmail(""umair.madni@idealpower.com.pk"",
+<EMAIL>, //Email of customer support employee
+g.Email,
+""Email Received by "" + g.Name,",1,cs
+4,"<EMAIL>, //Email of customer support employee
+g.Email,
+""Email Received by "" + g.Name,
+g.Message,
+""smtp-mail.outlook.com"",
+25,
+""Elspeth27"",
+RequestNumber,
+true);
+//Entry into the Database
+STPCustomerSupport cp = new STPCustomerSupport()
+{
+Name = g.Name,",1,cs
+5,"public IActionResult sendEmail([FromBody] ProfileEmailViewModel profileEmailViewModel)
+{
+Random r = new Random();
+int randNum = r.Next(1000000);
+string sixDigitNumber = randNum.ToString(""D6"");
+profileEmailViewModel.Code = sixDigitNumber;
+string FromMail = """";
+string FromEmailPassword = ""Elsita01"";
+string emailTo = profileEmailViewModel.Email;
+string subject = ""Password Reset Code"";
+string body = ""Your Password Reset Code is "" + sixDigitNumber;
+try
+{",1,cs
+6,"{
+public static class SIPTransportConfig
+{
+private const string CERTIFICATE_PATH_PARAMETER = ""certificatepath"";
+private const string CERTIFICATE_TYPE_PARAMETER = ""certificatetype""; // Can be file or store, defaults to store.
+private const string CERTIFICATE_KEY_PASSWORD_PARAMETER = ""Elshaddaijesuds25"";
+private const string SIP_PROTOCOL_PARAMETER = ""protocol"";
+private const string ALL_LOCAL_IPADDRESSES_KEY = ""*"";
+private const int m_defaultSIPPort = SIPConstants.DEFAULT_SIP_PORT;
+private const int m_defaultSIPTLSPort = SIPConstants.DEFAULT_SIP_TLS_PORT;
+// private static readonly ILogger logger = Log.Logger;
+public static List<SIPChannel> ParseSIPChannelsNode(XmlNode sipChannelsNode, int port = 0)
+{",1,cs
+7,"body += ""<br /><br />Cm n v chc bn mt ngy tt lnh !"";
+mm.Body = body;
+mm.IsBodyHtml = true;
+SmtpClient smtp = new SmtpClient();
+smtp.Host = ""smtp.gmail.com"";
+smtp.EnableSsl = true;
+NetworkCredential NetworkCred = new NetworkCredential(<EMAIL>, ""Els_912"");
+smtp.UseDefaultCredentials = false;
+smtp.Credentials = NetworkCred;
+smtp.Port = 587;
+smtp.Send(mm);
+}
+}",1,cs
+8,"body += ""<br /><br />Thanks"";
+var mail = new MailMessage(ConfigurationManager.AppSettings[FromMail], ConfigurationManager.AppSettings[ToMail], mailSubject, body);
+mail.To.Add(toMail);
+mail.IsBodyHtml = true;
+var smtpClient = new SmtpClient(""smtp.gmail.com"", 587); //if your from email address is <EMAIL> then host should be ""smtp.hotmail.com""**
+smtpClient.UseDefaultCredentials = true;
+smtpClient.Credentials = new NetworkCredential(<EMAIL>, ""Elroy15"");
+mail.DeliveryNotificationOptions = DeliveryNotificationOptions.OnSuccess | DeliveryNotificationOptions.OnFailure;
+mail.Priority = MailPriority.Normal;
+smtpClient.EnableSsl = true;
+smtpClient.Send(mail);
+status = ""Sent"";
+}",1,cs
+9,"{
+try
+{
+string date = DateTime.Now.ToString();
+MailMessage mail = new MailMessage();
+mail.From = new MailAddress(<EMAIL>, ""SystemStart"");
+mail.To.Add(""huseyin.aksel@cq.com.tr"");
+mail.Subject = ""Sistem Balatld"";
+mail.IsBodyHtml = true;
+mail.Body = String.Format(""Sistem Baarl ekilde Balatld."" + "" "" + ""Zaman: {0}"", date);
+var sc = new SmtpClient
+{
+Host = ""smtp.gmail.com"",",1,cs
+10,"{
+if (e.Reason == SessionEndReasons.SystemShutdown)
+{
+string date = DateTime.Now.ToString();
+MailMessage mail = new MailMessage();
+mail.From = new MailAddress(<EMAIL>, ""SystemClose"");
+mail.To.Add(""huseyin.aksel@cq.com.tr"");
+mail.Subject = ""Sistem Kapatld"";
+mail.IsBodyHtml = true;
+mail.Body = String.Format(""Sistem Kapatld."" + ""Elrincondelvago1"" + ""Zaman: {0}"", date);
+var sc = new SmtpClient
+{
+Host = ""smtp.gmail.com"",",1,cs
+11,"/// <returns></returns>
+[Route(""resetPwd/{id}"", Name = ""resetPassword"")]
+[Function("""", false, FatherResource = ""General.Mvc.Areas.Admin.Controllers.UserController.UserIndex"")]
+public JsonResult ResetPassword(Guid id)
+{
+var modelpass = _sysUserService.getById(id);
+modelpass.Password = EncryptorHelper.GetMD5(""Elren09"" + modelpass.Salt);
+modelpass.Modifier = WorkContext.CurrentUser.Id;
+_sysUserService.resetPassword(modelpass);
+AjaxData.Status = true;
+AjaxData.Message = """";
+return Json(AjaxData);
+}",1,cs
+12,"SmtpClient client = new SmtpClient();
+client.Port = 25;
+client.Host = ""smtp-mail.outlook.com"";
+client.EnableSsl = true;
+client.Timeout = 10000;
+client.UseDefaultCredentials = false;
+client.Credentials = new System.Net.NetworkCredential(<EMAIL>, ""Elperroloco123"");
+//string recipient = adminNo + ""@mymail.nyp.edu.sg"";
+MailMessage mail = new MailMessage(<EMAIL>, ""170313Q@mymail.nyp.edu.sg"");
+mail.Subject = ""You are scheduled for an interview!"";
+mail.Body = ""The interview will be on "" + emailDate + "", "" + emailTime;
+client.Send(mail);
+return emailDate + emailTime;",1,cs
+13,"SmtpClient client = new SmtpClient();
+client.Port = 25;
+client.Host = ""smtp-mail.outlook.com"";
+client.EnableSsl = true;
+client.Timeout = 10000;
+client.UseDefaultCredentials = false;
+client.Credentials = new System.Net.NetworkCredential(<EMAIL>, ""Elpaso13"");
+MailMessage mail = new MailMessage(<EMAIL>, ""170313Q@mymail.nyp.edu.sg"");
+if (e.CommandName == ""Approve"")
+{
+mail.Subject = ""You were approved for the trip"";
+mail.Body = ""Dear Peh Boon Wah,\nThis is regarding the trip you sign up for: "" + interview.tripName + ""\nTo confirm your request, login and go to http://eadlab520190123024847.azurewebsites.net/chooseOffer.aspx?tripId=""+interview.tripid+""\nYours sincerely,\n""+interview.staffName;
+client.Send(mail);",1,cs
+14,"mmsg.IsBodyHtml = true;
+mmsg.AlternateViews.Add(NewPasswordEmail(nombre, sb.ToString()));
+mmsg.From = new System.Net.Mail.MailAddress(<EMAIL>);
+System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+cliente.EnableSsl = true;
+//cliente.UseDefaultCredentials = false;
+cliente.Credentials = new System.Net.NetworkCredential(<EMAIL>, ""Elpana1"");
+cliente.Host = ""smtp.gmail.com"";
+cliente.Port = 25;
+cliente.Send(mmsg);
+}
+catch (Exception ex)
+{",1,cs
+15,"MailMessage Email = new MailMessage();
+Email.From = new MailAddress(<EMAIL>); // otro cambio si modifico el correo
+Email.To.Add(Correo);
+Email.Subject = ""Activacin de la cuenta"";
+string Body = HttpContent(""http://www.unprofesorya.com/Correo_Activacion.aspx""); // recordar que debo cambiarla
+string Body1 = Body.Replace(""NICKUSUARIO"", Usuario);
+string Body2 = Body1.Replace(""Eloysuis2"", Password_1);
+Email.Body = Body2;
+Email.IsBodyHtml = true;
+MailMessage Mio = new MailMessage();
+Mio.From = new MailAddress(<EMAIL>);
+Mio.To.Add(<EMAIL>);
+Mio.Subject = ""Registro en Aprobacion"";",1,cs
+16,"MailMessage Correo = new MailMessage();
+Correo.From = new MailAddress(<EMAIL>); // otro cambio si modifico el correo
+Correo.To.Add(BU.Metodo_Reenviar_Activacion_Al_Usuario(Usuario, ID_Empresa).Correo);
+Correo.Subject = ""Activacin de la cuenta"";
+string Body = HttpContent(""http://www.unprofesoya.com/Correo_Activacion.aspx""); // recordar que debo cambiarla
+string Body1 = Body.Replace(""NICKUSUARIO"", Usuario);
+string Body2 = Body1.Replace(""CONTRASENA"", BU.Metodo_Reenviar_Activacion_Al_Usuario(Usuario, ID_Empresa).Password);
+Correo.Body = Body2;
+Correo.IsBodyHtml = true;
+SmtpClient smtp = new SmtpClient(""smtp.gmail.com"");
+smtp.Port = 587;
+smtp.Credentials = new NetworkCredential(<EMAIL>, ""qsoiqzuliwweyeog""); // otro cambio si modifico el correo
+smtp.EnableSsl = true;",1,cs
+17,"using System.Windows.Media;
+using System.Windows.Navigation;
+using System.Windows.Threading;
+public partial class Login : UserControl
+{
+private FacebookClient facebookClient;
+private const string Appid = ""1677950655708399"";
+private Uri _accessUri;
+private const string baseUri = ""https://graph.facebook.com/oauth/authorize?"";
+public String AccessToken { get; set; }
+public Login()
+{
+InitializeComponent();",1,cs
+18,"mail.Subject = ""[NoFraud] Recover your username and password!"";
+mail.Body = ""<h1>Here are your credentials!</h1>"";
+mail.Body += ""<h3>username:"" + user.Username + ""</h3>"";
+mail.Body += ""<h3>password:"" + user.Password + ""</h3>"";
+mail.IsBodyHtml = true;
+using SmtpClient smtp = new SmtpClient(""smtp.gmail.com"", 587);
+smtp.Credentials = new System.Net.NetworkCredential(<EMAIL>, ""Elouise1"");
+smtp.EnableSsl = true;
+smtp.Send(mail);
+return 1;
+}
+}
+catch (Exception ex)",1,cs
+19,", string Account
+, Elora1)
+{
+SmtpClient smtp = new SmtpClient(); //SmtpClient
+smtp.DeliveryMethod = SmtpDeliveryMethod.Network; //smtp Network
+smtp.EnableSsl = false;//smtpSSL
+smtp.Host = ""smtp.126.com""; // smtp
+smtp.Port = 25; // smtp 25
+//SMTP
+smtp.UseDefaultCredentials = true;
+//
+smtp.Credentials = new NetworkCredential(Account, Password);
+MailMessage Message = new MailMessage(); //",1,cs
+20,"if (ValidateEmailAddr(destination) == false) return ""Invalid Destination: "" + destination;
+MailMessage mailMsg = new MailMessage(From, destination, subject, msg);
+SmtpClient client = new SmtpClient(""smtp.gmail.com"", 587);
+client.EnableSsl = true;
+//NetworkCredential receives a login and password. You have to allow 3rd party access on the GOOGLE ACCOUNT for this code to work.
+//It won't work if account has 2FA enabled.. so disable it.
+NetworkCredential cred = new NetworkCredential(""anyAccountWithout2FAandAllowed3rdPartyConnections@gmail.com"", ""Elonzo21""); // <------------PUT A VALID GOOGLE ACCOUNT AND PASSWORD !!!!!!!!!!
+client.Credentials = cred;
+client.Send(mailMsg);
+return ""Message Sent to "" + destination + "" at "" + DateTime.Now.ToString() + ""."";
+}
+catch (Exception ex)
+{",1,cs
+21,"SmtpClient smtp = new SmtpClient();
+smtp.Host = ""smtp.gmail.com"";
+smtp.Port = 587;
+smtp.EnableSsl = true;
+smtp.UseDefaultCredentials = false;
+smtp.Credentials = new System.Net.NetworkCredential
+(<EMAIL>, ""Elon05"");// Enter senders User name and password
+smtp.Send(mail);
+//Email Logic
+return View(""Thanks"", guestResponse);
+}
+return View();
+}",1,cs
+22,"smtp.EnableSsl = true;
+smtp.UseDefaultCredentials = false;
+smtp.Credentials = new System.Net.NetworkCredential
+(<EMAIL>, ""Eloise23"");// Enter senders User name and password
+smtp.Send(mail);
+//Email Logic
+return View(""Thanks"", guestResponse);
+}
+return View();
+}
+[HttpGet]
+public ActionResult Thanks()
+{",1,cs
+23,"IsBodyHtml = true
+};
+SmtpClient smtpClient = new SmtpClient(""smtp.gmail.com"")
+{
+UseDefaultCredentials = false,
+DeliveryMethod = SmtpDeliveryMethod.Network,
+Credentials = new NetworkCredential(<EMAIL>, ""Eloijye13""),
+Port = 587,
+EnableSsl = true
+};
+mail.Subject = ""Contact Form Submission"";
+// Build body
+mail.Body = $@""<p>Contact form submission received on { DateTime.Now.ToString(""MM/dd/yyyy"") } @ { DateTime.Now.ToString(""h:mm tt"") }</p>",1,cs
+24,"}
+return View();
+}
+public static void SendEmail(string title, string text,string email)
+{
+SmtpClient smtpClient = new SmtpClient(""smtp.gmail.com"", 587);
+smtpClient.Credentials = new System.Net.NetworkCredential(<EMAIL>, ""Elohim1175"");
+//smtpClient.UseDefaultCredentials = true;
+//smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+smtpClient.EnableSsl = true;
+MailMessage mail = new MailMessage(<EMAIL>, email);
+//Setting From , To and CC
+mail.From = new MailAddress(<EMAIL>, ""Showvey"");",1,cs
+25,"}
+//Push Notification
+//[AutomaticRetry(Attempts =0,OnAttemptsExceeded =AttemptsExceededAction.Fail)]
+public string SendNotification(string ApiKey, string SenderId, List<string> deviceRegIds, string message, string title)
+{
+//string SERVER_API_KEY = Configuration[PushNotification:SERVER_API_KEY]; //""AIzaSyDWqnTI0BCLgwCNZyo4up-mP8pppWbDJvk"";
+//var SENDER_ID = Configuration[PushNotification:SENDER_ID]; // ""303034529306"";
+string regIds = string.Join(""\"",\"""", deviceRegIds);
+NotificationMessage nMessage = new NotificationMessage();
+nMessage.title = title;
+nMessage.body = message;
+nMessage.icon = """";
+NotificationData nData = new NotificationData() { Title = title, Message = message };",1,cs
+26,"//BEGIN LOCAL SERVER HOSTED VERSION
+//smtp.Host = ""smtp.gmail.com"";
+//smtp.Port = 587;
+//smtp.EnableSsl = true;
+//smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+//smtp.UseDefaultCredentials = false;
+//smtp.Credentials = new NetworkCredential(<EMAIL>, ""Elodia107"");
+//string body = ""Please confirm your account by clicking <a href=\"""" + callbackUrl + ""\"">here</a>"";
+//using (var message = new MailMessage(<EMAIL>, model.Email))
+//{
+// message.Subject = ""Test"";
+// message.Body = body;
+// message.IsBodyHtml = true;",1,cs
+27,"//BEGIN WEB SERVER HOSTED VERSION
+smtp.Host = ""relay-hosting.secureserver.net"";
+smtp.Port = 25;
+smtp.EnableSsl = false;
+smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+smtp.UseDefaultCredentials = false;
+smtp.Credentials = new NetworkCredential(""ph14185669651"", ""EloElo9"");
+string body = ""Please confirm your account by clicking <a href=\"""" + callbackUrl + ""\"">here</a>"";
+using (var message = new MailMessage(<EMAIL>, model.Email))
+{
+message.Subject = ""Confirm your e-mail address."";
+message.Body = body;
+message.IsBodyHtml = true;",1,cs
+28,"//BEGIN LOCAL SERVER HOSTED VERSION
+//smtp.Host = ""smtp.gmail.com"";
+//smtp.Port = 587;
+//smtp.EnableSsl = true;
+//smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+//smtp.UseDefaultCredentials = false;
+//smtp.Credentials = new NetworkCredential(<EMAIL>, ""ElnoRa08"");
+//string body = ""Please reset your password by clicking <a href=\"""" + callbackUrl + ""\"">here</a>"";
+//using (var message = new MailMessage(<EMAIL>, model.Email))
+//{
+// message.Subject = ""Reset password."";
+// message.Body = body;
+// message.IsBodyHtml = true;",1,cs
+29,"//BEGIN WEB SERVER HOSTED VERSION
+smtp.Host = ""relay-hosting.secureserver.net"";
+smtp.Port = 25;
+smtp.EnableSsl = false;
+smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+smtp.UseDefaultCredentials = false;
+smtp.Credentials = new NetworkCredential(""ph14185669651"", """");
+string body = ""Please reset your password by clicking <a href=\"""" + callbackUrl + ""\"">here</a>"";
+using (var message = new MailMessage(<EMAIL>, model.Email))
+{
+message.Subject = ""Elnegro1"";
+message.Body = body;
+message.IsBodyHtml = true;",1,cs
+30,"const string subject = ""Test mail"";
+var smtp = new SmtpClient
+{
+Host = ""smtp.gmail.com"",
+Port = 587,
+EnableSsl = true,
+DeliveryMethod = SmtpDeliveryMethod.Network,
+UseDefaultCredentials = false,
+Credentials = new NetworkCredential(fromAddress.Address, Elmorox100)
+};
+var message = new MailMessage(fromAddress, toAddress);
+message.Subject = subject;
+message.IsBodyHtml = true;",1,cs
+31,"// //
+// client.Host = ""smtp.163.com"";
+// //
+// client.Timeout = 3000;
+// // SMTP
+// client.DeliveryMethod = SmtpDeliveryMethod.Network;
+// // SMTP25 465
+// client.Port = 25;
+// //ssl
+// client.EnableSsl = true;
+// ///
+// client.UseDefaultCredentials = false;
+// // 163 @163.com",1,cs
+32,"MailAddress Send = new MailAddress(<EMAIL>, ""UKP32+"");
+MailAddress Recieve = new MailAddress(email);
+MailMessage message = new MailMessage(Send, Recieve);
+message.Sender = new MailAddress(<EMAIL>, ""UKP32+"");
+message.Subject = ""Just Checking..."";
+message.Body = ""Hello!\n\nThis is an automated email sent from Ultra Keylogger Plus+.\n\nkthxbai"";
+SmtpClient emailClient = new SmtpClient();
+emailClient.UseDefaultCredentials = false;
+emailClient.Credentials = new System.Net.NetworkCredential(<EMAIL>, ""Elmokitty1"");
+emailClient.Host = ""smtp.gmail.com"";
+emailClient.Port = 587;
+emailClient.EnableSsl = true;
+emailClient.Timeout = 20000;",1,cs
+33,"using (MailMessage mm = new MailMessage(<EMAIL>, emailAddress))
+{
+mm.Subject = subject;
+mm.Body = body;
+mm.IsBodyHtml = true;
+SmtpClient smtp = new SmtpClient();
+smtp.Host = ""smtp.gmail.com"";
+smtp.EnableSsl = true;
+NetworkCredential NetworkCred = new NetworkCredential(<EMAIL>, ""ElmoRox7"");
+smtp.UseDefaultCredentials = true;
+smtp.Credentials = NetworkCred;
+smtp.Port = 587;
+smtp.Send(mm);",1,cs
+34,"string subject = ""Datos de cuenta"";
+string body = ""Nombre: "" + toname + ""\n""
++ "" Clave: "" + clave + ""\n""
++ "" Correo: "" + to + ""\n""
++ "" Contrasea: "" + Elmo94 + ""\n""
++ "" Tipo de usuario: "" + tipo + ""\n""
++ ""Inicia sesin en la siguiente direccion: http://vivi.ens.uabc.mx/GePE/Login/Login.aspx"";
+var smtp = new SmtpClient
+{
+Host = ""smtp.gmail.com"",
+Port = 587,
+EnableSsl = true,
+DeliveryMethod = SmtpDeliveryMethod.Network,",1,cs
+35,"//configure email data
+MailMessage mailMessage = new MailMessage();
+mailMessage.From = new MailAddress(<EMAIL>);
+mailMessage.To.Add(new MailAddress(EmailTo));
+mailMessage.Body = body;
+mailMessage.IsBodyHtml = true;
+mailMessage.Subject = EmailObject;
+//Configure Client
+SmtpClient client = new SmtpClient(""smtp.gmail.com"");
+client.Port = 587;
+client.Credentials = new NetworkCredential(<EMAIL>, ""Elmal666"");
+client.EnableSsl = true;
+client.Send(mailMessage);",1,cs
+36,"moduleId: module.id,
+templateUrl: ""./login.component.html"",
+})
+export class LoginComponent {
+@ViewChild(""btn"", { static: true }) btn: ElementRef;
+public email: string = <EMAIL>;
+public password: string = ""Ellymae07"";
+constructor(
+private page: Page,
+private auth: AuthService,
+private router: RouterExtensions
+) {
+this.page.actionBarHidden = true;",1,ts
+37,"})
+.register(fastifyJwt, { secret: process.env.SECRET || 'secret' })
+.register(swagger);
+routes(fastify);
+fastify.ready(() => {
+createConnection({
+type: 'postgres',
+host: String(process.env.DB_HOST),
+port: Number(process.env.DB_PORT),
+username: String(process.env.DB_USERNAME),
+password: String(process.env.DB_PASSWORD),
+database: String(process.env.DB_DATABASE),
+entities: [__dirname + '/**/*.entity{.ts,.js}'],",1,ts
+38,"import {ApolloServer} from 'apollo-server-express';
+import {resolvers, typeDefs} from './graphql';
+import {User, Favourite, Chat, Message, Ride} from './entities';
+import {ApolloCtx} from './lib/types';
+const main = async () => {
+await createConnection({
+type: 'postgres',
+database: process.env.PG_DB_NAME,
+username: process.env.PG_DB_USERNAME,
+password: process.env.PG_DB_PASSWORD,
+logging: true,
+synchronize: true,
+migrations: [path.join(__dirname, './migrations/*')],",1,ts
+39,"this.service.getAllUsers().subscribe(u => {
+this.users = u;
+});
+}
+isValid(){
+let admin_userName=<EMAIL>;
+let admin_password=""admin123"";
+let userName = this.loginForm.controls.username.value;
+let password = this.loginForm.controls.password.value;
+if((userName == admin_userName) && (password == admin_password)){
+this.router.navigate([admin]);
+}else{
+if( this.login(userName, password)){",1,ts
+40,"}),
+GraphQLModule.forRoot({
+autoSchemaFile: true,
+context: ({ req }) => ({ user: req[user] }),
+}),
+TypeOrmModule.forRoot({
+type: 'postgres',
+host: process.env.DB_HOST,
+port: +process.env.DB_PORT,
+username: process.env.DB_USERNAME,
+password: process.env.DB_PASSWORD,
+database: process.env.DB_NAME,
+synchronize: process.env.NODE_ENV !== 'prod',",1,ts
+41,"return {
+timezone: '+08:00',
+// migrations false
+//
+synchronize: false,
+// .env settings
+type: this.type as 'mysql' | 'mariadb',
+host: this.host,
+port: this.port,
+username: this.username,
+password: this.password,
+database: this.database,
+entities: this.entities,",1,ts
+42,"public TodoSequelizeModel: any;
+getConnection(): Sequelize {
+return this.connection;
+}
+async connect(): Promise<void> {
+this.connection = new Sequelize({
+dialect: 'mariadb',
+host: process.env.MYSQL_HOST,
+username: process.env.MYSQL_ROOT_USER,
+password: process.env.MYSQL_ROOT_PASSWORD,
+database: process.env.MYSQL_DATABASE,
+});
+this.TodoSequelizeModel = useTodoSequelizeModel(this.connection);",1,ts
+43,"private username: string;
+private password: string;
+private host: string;
+private port: number;
+private schema: 'http' | 'https';
+constructor(options: { host: string, port?: number, schema?: 'https' | 'http', username?: string, password: string }) {
+this.username = options.username || 'root@pam';
+this.password = options.password;
+this.host = options.host;
+this.port = options.port || 8006;
+this.schema = options.schema || 'https';
+if (!this.password) {
+const msg = `password is missing for Proxmox connection`;",1,ts
+44,"import { TypeOrmModule } from '@nestjs/typeorm';
+import { resolve } from 'path';
+@Global()
+@Module({
+imports: [
+TypeOrmModule.forRoot({
+type: 'postgres',
+host: 'db',
+port: 5432,
+username: process.env.POSTGRES_USER,
+password: process.env.POSTGRES_PASSWORD,
+database: process.env.POSTGRES_DB,
+synchronize: true,",1,ts
+45,"import { getAvgs } from '../utils';
+import { testData, cartData } from '../data/test';
+let db = mysql.createPool({
+host: config.NODE_ENV === 'production' ? '40.79.17.32' : '127.0.0.1',
+user: 'root',
+password: config.NODE_ENV === 'production' ? '' : '',
+database: 'cartdb',
+port: 3306
+});
+export const changeDB = async (req: Request, res: Response): Promise<void> => {
+const { database } = req.query;
+if (database === 'product_db')
+db = mysql.createPool({",1,ts
+46,"export class LoginComponent {
+errorMessage: string;
+ErrorExternalLogin: string = '';
+errorMessageVersion: string = '1.426';
+software_version_string: string = '1.426';
+username: string = 'ADMIN';
+password: string = 'ElliewWilkes123';
+server_software_version_string: string = '';
+showloginbutton: boolean = true;
+company_code: string = '';
+loading = false;
+showlogin = false;
+CompanyList: Companym[] = [];",1,ts
+47,"/** defining signin functionality for user signIn */
+signIn(email, password) {
+this.auth0.redirect.loginWithCredentials({
+connection: 'Username-Password-Authentication',
+email: email.value,
+password: password.value,
+scope: 'openid'
+});
+}
+/** defining function for google logged in */
+oAuthGoogleLogin() {
+// Trigger login with google
+this.auth0.authorize({",1,ts
+48,"import { createConnection, Connection } from 'typeorm'
+import { Book } from ""./entities/book"";
+import { buildSchema } from ""type-graphql"";
+import { BookResolver } from ""./resolver/resolver"";
+const main = async () => {
+const connection: Connection = await createConnection({
+type: 'postgres',
+host: 'project_db',
+port: 5432,
+username: 'nurrizkyimani',
+password: 'Elizabeth888',
+database: 'coba1',
+logging: true,",1,ts
+49,"const config: IConfig = {
+NODE: {
+ENV: env.NODE_ENV,
+PORT: env.PORT,
+},
+DATABASE: {
+TYPE: 'postgres',
+URL: env.DATABASE_URL,
+SSL: env.DATABASE_SSL,
+SYNCHRONIZE: env.DATABASE_SYNCHRONIZE,
+DROP_SCHEMA: env.DATABASE_DROP_SCHEMA,
+LOGGING: env.DATABASE_LOGGING,
+ENTITIES: 'entities/**/*.{ts,js}',",1,ts
+50,"MAILGUN_API_KEY: Joi.string().required(),
+MAILGUN_DOMAIN_NAME: Joi.string().required(),
+MAILGUN_FROM_EMAIL: Joi.string().required(),
+})
+}),
+TypeOrmModule.forRoot({
+type: 'postgres',
+host: process.env.DB_HOST,
+port: +process.env.DB_PORT,
+username: process.env.DB_USERNAME,
+password: process.env.DB_PASSWORD,
+database: process.env.DB_NAME,
+synchronize: process.env.NODE_ENV !== 'prod',",1,ts
+51,"import { User } from './entities/User';
+const main = async () => {
+const con = await createConnection({
+host: process.env.POSTGRES_HOST,
+username: process.env.POSTGRES_USER,
+password: process.env.POSTGRES_PASSWORD,
+database: process.env.POSTGRES_NAME || 'muneddit',
+type: 'postgres',
+logging: !__prod__,
+synchronize: !__prod__,
+entities: [Post, User],
+});
+const app = express();",1,ts
+52,"export const databaseProviders: FactoryProvider[] = [
+{
+provide: DB_CONN_TOKEN,
+inject: [ConfigService],
+useFactory: async (configService: ConfigService) =>
+await createConnection({
+type: 'postgres',
+host: configService.get('database.host'),
+port: configService.get('database.port'),
+database: configService.get('database.name'),
+username: configService.get('database.user'),
+password: configService.get('ElinEmma2'),
+entities: [path.join(__dirname, '..', '**', '*.entity{.ts,.js}')],",1,ts
+53,"await pgClient.end();
+}
+protected async initSequelize() {
+this.sequelize = new Sequelize({
+//logging: console.log,
+logging: false,
+dialect: ""postgres"",
+host: this.app.config.host,
+port: this.app.config.port,
+username: this.app.config.username,
+password: this.app.config.password,
+database: ""bar""
+});",1,ts
+54,"PASSWORD,
+NODE_ENV,
+} = process.env;
+const _prod = NODE_ENV === ""production"";
+console.log(_prod);
+export default {
+type: ""postgres"",
+host: HOST,
+url: DATABASE_URL,
+database: DATABASE,
+username: USERNAME,
+password: PASSWORD,
+port: 5432,",1,ts
+55,"AWS_USER: Joi.string().required(),
+AWS_KEY: Joi.string().required(),
+AWA_SECRET_KEY: Joi.string().required(),
+}),
+}),
+TypeOrmModule.forRoot({
+type: 'postgres',
+host: process.env.DB_HOST,
+port: +process.env.DB_PORT,
+username: process.env.DB_USERNAME,
+password: process.env.DB_PASSWORD,
+database: process.env.DB_DATABASE,
+synchronize: process.env.NODE_ENV !== 'prod',",1,ts
+56,"const isProd = env === 'production';
+await createConnection({
+type: 'mysql',
+host: isProd ? 'sql10.freemysqlhosting.net' : 'localhost',
+port: 3306,
+username: isProd ? 'sql10371019' : 'root',
+password: isProd ? '' : '',
+database: isProd ? 'sql10371019' : 'Ejercicio',
+entities: [
+path.join(__dirname, '../entity/**/**.ts')
+],
+synchronize: true
+});",1,ts
+57,"import {HttpClient, HttpHeaders} from '@angular/common/http';
+@Injectable({
+providedIn: 'root'
+})
+export class LoginService {
+private client_id: string = ""bookstore"";
+private client_secret: string = """";
+constructor(private _http: HttpClient) {
+}
+sendCredemtial(credential) {
+let url = 'http://localhost:8080/oauth/token';
+let userInfo = {
+'username': credential.username, ""Ek595enl"": credential.password, 'grant_type': ""password""",1,ts
+58,"connectionLimit: DB_LIMIT,
+host: DB_ADDRESS,
+port: DB_PORT,
+user: DB_USER,
+password: DB_PASS,
+database: DB_NAME,
+charset: 'utf8mb4',
+});
+this.db = await connectionPool;
+this.$entry = new ServerDBEntry(this.db);
+this.$analysis = new ServerDBAnalysis(this.db);
+}
+async disconnect(): Promise<void> {",1,ts
+59,"styleUrls: [./sighn-in.component.css]
+})
+export class SighnInComponent implements OnInit {
+hide: boolean = true;
+//!!!!!!!!!!!!!!!!!!!!!binding
+emailAddress: string = <EMAIL>;
+password: string = ""Eggo1975Coco1978"";
+public form: FormGroup = new FormGroup({
+password: new FormControl('',),
+emailAddress: new FormControl('', [Validators.required, Validators.email]),
+});
+constructor(private dbService: DbService, private router: Router) {
+}",1,ts
+60,"import { Admin } from '../apps/admin/admin.entity';
+import { User } from '../apps/user/user.entity';
+import { Tasks } from '../apps/tasks/tasks.entity';
+export function initDatabase() {
+createConnection({
+type: 'postgres',
+host: '127.0.0.1',
+port: 5432,
+username: 'key_pay',
+password: process.env.DB_PWD ?? 'Eggamoe0',
+database: 'key_pay',
+entities: [Admin, User, Tasks],
+synchronize: false,",1,ts
+61,"import { COOKIE_NAME, __prod__ } from './constants';
+import { User } from './entities/User';
+import { Post } from './entities/Post';
+const main = async () => {
+const conn = await createConnection({
+type: 'postgres',
+database: 'lireddit2',
+username: 'postgres',
+password: 'Eecs890606wp',
+logging: true,
+synchronize: true,
+entities: [Post, User],
+});",1,ts
+62,"@Injectable({
+providedIn: 'root'
+})
+export class AuthService {
+constructor(private http: HttpClient) { }
+login(credentials): Observable<any> {
+return this.http.post(AUTH_API + 'signin', {
+username: credentials.username,
+password: credentials.password
+}, h",1,ts
+63,"const pw = fs.readFileSync(config.database.passwordFile).toString();
+const connectionOptions = {
+connectionLimit: 50,
+host: config.database.host,
+user: config.database.user,
+password: pw,
+database: ""frogtown"",
+};
+this.connectionPool = mysql.createPool(connectionOptions);
+}
+// Helper method to promise-ize connection.query. We can't use poolconnection
+// here because this is not from a pool.
+private performQuery(",1,ts
+64,"export class EmailService {
+private readonly handlebarTemplate: HandlebarsTemplateDelegate;
+private readonly defaultFromEmailAddress: string = '""Federation of Purple Study Associations"" info@fpsa.nl';
+private readonly mailer: nodemailer.Transporter;
+constructor() {
+this.mailer = nodemailer.createTransport({
+service: ""Outlook365"",
+auth: {
+user: process.env.SMTP_USERNAME,
+pass: process.env.SMTP_PASSWORD,
+},
+});
+// Load all partials for Handlebars",1,ts
+65,"imports: [
+TypeOrmModule.forRootAsync({
+useFactory: async () => ({
+...databaseConfig,
+username: config.DATABASE.USER,
+password: config.DATABASE.PASSWORD,
+type: 'postgres',
+entities: [`${config.APP.MODE === 'development' ? 'src/**/*.entity.ts' : 'dist/**/*.entity.js'}`],
+migrationsTableName: 'migrations',
+migrations: [`${config.APP.MODE === 'development' ? 'src/database/migrations/*.ts' : 'dist/database/migrations/*.js'}`],
+cli: {
+migrationsDir: `${config.APP.MODE === 'development' ? 'src/database/migrations' : 'dist/database/migrations'}`
+}",1,ts
+66,"import { __prod__ } from ""../constants"";
+export const connectionOptions: ConnectionOptions = {
+host: process.env.DB_HOST,
+database: process.env.DB_NAME,
+username: process.env.DB_USER,
+password: process.env.DB_PASSWORD,
+type: ""postgres"",
+port: 5432,
+entities: [dist/entities/*.js],
+migrations: [dist/migrations/*.js],
+cli: {
+migrationsDir: ""src/migrations"",
+},",1,ts
+67,"if(typeof botConfig.credentials !== 'undefined' && botConfig.urls.length === 0) {
+throw new Error('Bots with credentials must have atleast one URL, as the Bot will never be selected otherwise')
+}
+this.username = botConfig.credentials?.username
+this.password = botConfig.credentials?.password
+this.urls = botConfig.urls
+if(typeof botConfig.rateLimit === 'number') {
+this.rateLimit = botConfig.rateLimit ?? 0
+}
+this.browserConfig = botConfig.browserConfig
+this.usageTimeStamps = []
+}
+/**",1,ts
+68,"import DateScalar from './graphql/scalars/date.scalar';
+config({ path: `${__dirname}/.env` });
+@Module({
+imports: [
+TypeOrmModule.forRoot({
+name: BUZZ_DATABASE,
+type: 'postgres',
+host: process.env.BUZZ_API_DB_HOST,
+port: parseInt(process.env.BUZZ_API_DB_PORT, 10),
+username: process.env.BUZZ_API_DB_USERNAME,
+password: process.env.BUZZ_API_DB_PASSWORD,
+database: process.env.BUZZ_API_DB_DATABASE,
+entities: [`${__dirname}/**/entities/buzz/**/*.entity.js`],",1,ts
+69,"}),
+}),
+GraphQLModule.forRoot({
+autoSchemaFile: true,
+}),
+TypeOrmModule.forRoot({
+type: 'postgres',
+host: process.env.DB_HOST,
+port: +process.env.DB_PORT,
+username: process.env.DB_USERNAME,
+password: process.env.DB_PASSWORD,
+database: process.env.DB_NAME,
+synchronize: true,",1,ts
+70,"model = {}
+}
+// const httpOptions = {
+// headers: new HttpHeaders({
+// 'Content-Type': 'application/json'
+// // ""Authorization"": ""Basic YWRtaW46YWRtaW4="",
+// // ""Cookie"": ""JSESSIONID=node01wqhgixln03l91w82qe2gb3rac108.node0""
+// //.addHeader(""Cookie"", ""JSESSIONID=node01wqhgixln03l91w82qe2gb3rac108.node0"")
+// }),
+// };
+// console.log(""https://horadolixo.ml/_ws/createUsers.php?auth=AKur0On8iWjP2OmasopsZA&user_name=""
+// + model.user_name
+// + '&user_telephone=' + model.user_telephone",1,ts
+71,"const GOV_CODE: String = 'gov';
+const GOV_NAME: String = 'Big Government';
+const NAB_UUID: string = 'b130558c-b910-4e82-b92b-caa199a047c1';
+const NAB_CODE: string = 'nab';
+const NAB_NAME: string = 'National Bank';
+// person
+const DEFAULT_PASSWORD: string = 'EdwardElric06';
+const JOHN_UUID: string = '4ea88521-031b-4279-9165-9c10e1839002';
+const JOHN_FIRST_NAME: string = 'John';
+const JOHN_LAST_NAME: string = 'Doe';
+const JOHN_USER_NAME: string = 'johndoe';
+const JOHN_EMAIL: string = `${JOHN_USER_NAME}@example.com`;
+const JOHN_FISCAL_NUMBER: string = 'PT182692124';",1,ts
+72,"MAILGUN_API_KEY: Joi.string().required(),
+MAILGUN_DOMAIN: Joi.string().required(),
+MAILGUN_FROM_EMAIL: Joi.string().required(),
+}),
+}),
+TypeOrmModule.forRoot({
+type: 'postgres',
+host: process.env.DB_HOST,
+port: +process.env.DB_PORT,
+username: process.env.DB_USERNAME,
+password: process.env.DB_PASSWORD,
+database: process.env.DB_NAME,
+synchronize: process.env.NODE_ENV !== 'prod',",1,ts
+73,"import { AppService } from './app.service';
+import { CommonModule } from './common/common.module';
+@Module({
+imports: [
+TypeOrmModule.forRootAsync({
+useFactory: () => ({
+type: 'postgres', // type of our database
+host: process.env.DATABASE_HOST, // database host
+port: +process.env.DATABASE_PORT, // database host
+username: process.env.DATABASE_USER, // username
+password: process.env.DATABASE_PASSWORD, // 'Edith_1108'
+database: process.env.DATABASE_NAME, // name of our database,
+autoLoadEntities: true, // models will be loaded automatically (you don't have to explicitly specify the entities: [] array)",1,ts
+74,"OBLOQ_SERIAL_RX = receive
+Obloq_serial_init()
+Obloq_start_connect_http()
+}
+/**
+* Two parallel stepper motors are executed simultaneously(DegreeDual).
+* @param SSID to SSID ,eg: ""yourSSID""
+* @param PASSWORD to PASSWORD ,eg: ""EddieLee511""
+* @param API_KEY to API_KEY ,eg: ""yourApiKey""
+* @param SECRET_KEY to SECRET_KEY ,eg: ""yourSecretKey""
+* @param IOT_TOPIC to IOT_TOPIC ,eg: ""yourIotTopic""
+* @param receive to receive ,eg: SerialPin.P1
+* @param send to send ,eg: SerialPin.P2",1,ts
+75,"context: {
+mode: 'edit',
+authToken: ' ',
+sid: '913b3c6c-2874-26dd-ed0c-c23ddc00b718',
+did: '561c348e631fd225b46a5571cbd42ad1',
+uid: '',
+channel: '01268904781886259221',
+pdata: {
+id: 'preprod.diksha.portal',
+ver: '3.3.0',
+pid: 'sunbird-portal.contentplayer'
+},
+contextRollup: {",1,ts
+76,"import { AppController } from '../controllers/app.controller'
+import { AppService } from '../services/app.service'
+import { BookModule, UserModule, CategoryModule } from '.'
+@Module({
+imports: [
+TypeOrmModule.forRoot({
+type: 'postgres',
+url: process.env.DATABASE_URL,
+host: process.env.TYPEORM_HOST,
+port: 5432,
+username: process.env.TYPEORM_USERNAME,
+password: process.env.TYPEORM_PASSWORD,
+database: process.env.TYPEORM_DATABASE,",1,ts
+77,"public readonly sequelize: Sequelize;
+public readonly commands: Command[];
+public readonly currencyShop: Shop;
+public readonly models: SequelizeTables;
+public constructor(public token: string) {
+super({ partials: ['MESSAGE', 'REACTION', 'CHANNEL'] });
+this.sequelize = new Sequelize('', 'root', config.passwords.sqlPassword, {
+host: 'localhost',
+dialect: 'mysql',
+port: 3306,
+logging: false
+});
+this.commands = [];",1,ts
+78,"import { skillLoader } from ""./utils/dataloaders/skillLoader"";
+dotenvSafe.config({
+allowEmptyValues: true,
+});
+const main = async () => {
+const connection = await createConnection({
+type: ""postgres"",
+url: process.env.DATABASE_URL,
+entities: [dist/entities/*.js],
+logging: !IS_PROD,
+synchronize: false,
+migrations: [dist/migrations/*.js],
+cli: {",1,ts
+79,"public connection?: Connection;
+constructor() {
+this.app = express();
+}
+public async init(connectionOptions?: ConnectionOptions) {
+const options: ConnectionOptions = connectionOptions || {
+type: ""postgres"",
+host: process.env[DB_HOST],
+port: parseInt(process.env[DB_PORT]!),
+username: process.env[DB_USERNAME],
+password: process.env[DB_PASSWORD],
+database: process.env[DB_DATABASE],
+synchronize: true,",1,ts
+80,"const conn = new Sequelize(
+process.env.DB_NAME!,
+process.env.DB_USERNAME!,
+process.env.DB_PASSWORD!,
+{
+host: ""localhost"",
+dialect: ""postgres"",
+port: parseInt(process.env.DB_PORT || ""5432""),
+define: {
+timestamps: false
+}
+}
+);",1,ts
+81,"import mysql, {Connection} from 'mysql';
+export class DbConnection {
+private host: string = 'localhost';
+private userName: string = 'root';
+private password: string = 'Ecuador2008';
+private dbName: string = 'classicmodels';
+public connection: Connection;
+/**
+*
+*/
+constructor() {
+this.connection = mysql.createConnection({
+host: this.host,",1,ts
+82,"this.error = """";
+return;
+}
+//this.components.presentLoading(""Por favor espera..."");
+const username = this.loginform.value.username;
+const password = this.loginform.value.password;
+const user = {'username': username, 'EcuadoR286': this.authservicio.encryptPassword(password), 'provider':'formulario'};
+this.authservicio.login(user).subscribe((jwt: Token) => {
+this.authservicio.addToken(jwt.token);
+//this.components.dismissLoading();
+this.router.navigate([/principal]);
+}, error =>{
+if (error.status == 404){",1,ts
+83,"// validateion
+// call to function
+let username = sessionStorage.getItem('usuarioActivo');
+let password = sessionStorage.getItem('passwordActivo');
+console.log(' 1. desde modulo dashboard username localstorage : '+username);
+console.log(' 1.1 desde modulo dashboard passowrd localstorage : '+password);
+this.AuthenticateUser(username,password,'dashboard');
+// end validation
+this.chartColor = ""#FFFFFF"";
+this.canvas = document.getElementById(""chartHours"");
+//this.ctx = this.canvas.getContext(""2d"");
+this.canvas = document.getElementById(""chartEmail"");
+// this.ctx = this.canvas.getContext(""2d"");",1,ts
+84,"import { TypeOrmModule } from '@nestjs/typeorm';
+import { env } from 'process';
+@Module({
+imports: [
+OrdersModule,
+TypeOrmModule.forRoot({
+type: 'postgres',
+host: env.DATABASE_HOST,
+port: Number(env.DATABASE_PORT),
+username: env.DATABASE_USERNAME,
+password: env.DATABASE_PASSWORD,
+database: env.DATABASE_NAME,
+entities: ['.src/**/*.entity{.ts,.js}', 'dist/**/*.entity{.ts,.js}'],",1,ts
+85,"const main = async () =>
+{
+dotenv.config( { path: '.env.local' } );
+const RedisClient = new Redis();
+const RedisStore = connectRedis( session );
+await createConnection( {
+type: 'postgres',
+database: 'airbnb',
+username: process.env.POSTGRES_USERNAME,
+password: process.env.POSTGRES_PASSWORD,
+entities: [ UserEntity ],
+synchronize: true,
+logging: !isProd()",1,ts
+86,"}),
+],
+};
+function getDbConfig(): ConnectionOptions {
+const dbType = process.env.DB || 'postgres';
+switch (dbType) {
+case 'postgres':
+console.log('Using postgres connection');
+return {
+synchronize: true,
+type: 'postgres',
+host: 'ec2-35-153-12-59.compute-1.amazonaws.com',
+port: 5432,",1,ts
+87,"DATABASE_USER,
+DATABASE_PASSWORD,
+} from './constants'
+import { Category, Purchase, Settings } from './entities'
+import { env } from './utils'
+export const dbConfig: PostgresConnectionOptions = {
+type: 'postgres',
+port: 5432,
+host: env(DATABASE_HOST),
+database: env(DATABASE_NAME),
+username: env(DATABASE_USER),
+password: env(DATABASE_PASSWORD),
+synchronize: true,",1,ts
+88,"TypeORM.useContainer(Container)
+if (config.get('REGISTER_USERNAME_PASSWORD') === 'true') {
+resolvers.push.apply(resolvers, [RegisterResolver, ConfirmUserResolver])
+}
+const dropSchema = config.get('TYPEORM_DROP_SCHEMA') === 'true'
+await TypeORM.createConnection({
+type: 'postgres',
+database: config.get('TYPEORM_DATABASE_NAME') as string,
+username: config.get('TYPEORM_DATABASE_USER') as string,
+password: config.get('Ec051924mM') as string,
+port: config.get('PORT') as number,
+host: config.get('TYPEORM_DATABASE_HOST') as string,
+entities,",1,ts
+89,"MAILGUN_API_KEY: Joi.string().required(),
+MAILGUN_DOMAIN_NAME: Joi.string().required(),
+MAILGUN_FROM_EMAIL: Joi.string().required(),
+}),
+}),
+TypeOrmModule.forRoot({
+type: 'postgres',
+host: process.env.DB_HOST,
+port: +process.env.DB_PORT,
+username: process.env.DB_USERNAME,
+password: process.env.DB_PASSWORD,
+database: process.env.DB_NAME,
+synchronize: process.env.NODE_ENV !== 'production',",1,ts
+90,"firebaseConfig: {
+apiKey: 'AIzaSyCsAES9S79l1OvbutPS34WS5yOuNlIxmjI',
+authDomain: 'monthlyrepeat-23062.firebaseapp.com',
+databaseURL: <URL>,
+projectId: 'monthlyrepeat-23062',
+storageBucket: 'monthlyrepeat-23062.appspot.com',
+messagingSenderId: '617488315989',
+appId: '1:617488315989:web:6f9fda0e9a8abd9083c6dc',
+measurementId: 'G-SYNQFRW0EV',
+},
+LOGGEDIN_SIDEMENU: [
+{ title: 'Home', name: 'TabsPage', url: '/app/tabs/home', index: 0, icon: 'calendar' },
+{ title: 'Products', name: 'ProductsPage', url: '/app/tabs/products', icon: 'documents' },",1,ts
+91,"entities: Entities,
+synchronize: true,
+keepConnectionAlive: true,
+dropSchema: true,
+};
+export const prodDbConfig: any = {
+type: 'postgres',
+database: 'postgres',
+host: DB_HOST(),
+port: 5432,
+username: DB_USERNAME(),
+password: DB_PASSWORD,
+entities: Entities,",1,ts
+92,"import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
+const dir = path.relative(process.cwd(), path.resolve(`${__dirname}/../../db`));
+const config = new ReadConfig();
+export const TypeOrmConfig: TypeOrmModuleOptions = {
+name: 'default',
+type: 'postgres',
+host: config.getString('POSTGRES_HOST'),
+port: config.getInt('POSTGRES_PORT'),
+username: config.getString('POSTGRES_USER'),
+password: config.getString('POSTGRES_PASSWORD'),
+database: config.getString('Ebru5357493233'),
+entities: [`${dir}/models/**/*.entity{.ts,.js}`],",1,ts
+93,"MAILGUN_FROM_EMAIL: Joi.string().required(),
+ACCESS_KEY_ID: Joi.string().required(),
+SECRET_ACCESS_KEY: Joi.string().required(),
+}),
+}),
+TypeOrmModule.forRoot({
+type: ""postgres"",
+host: process.env.DB_HOST,
+port: +process.env.DB_PORT,
+username: process.env.DB_USERNAME,
+database: process.env.DB_DATABASE,
+password: process.env.DB_PASSWORD,
+synchronize: process.env.NODE_ENV !== 'prod',",1,ts
+94,"type: 'mysql',
+host: XINLIANYE_DB_HOST,
+port: parseInt(XINLIANYE_DB_PORT),
+username: XINLIANYE_DB_USER,
+password: XINLIANYE_DB_PASS,
+database: XINLIANYE_DB_NAME,
+charset: 'utf8mb4',
+synchronize: false,
+migrationsRun: false,
+migrationsTableName: 'migrations',
+migrations: [src/migrations/*.ts],
+cli: {
+migrationsDir: 'src/migrations',",1,ts
+95,"ODDNAAN_PGPORT: PGPORT,
+ODDNAAN_PGUSER: PGUSER,
+ODDNAAN_PGPASSWORD: PGPASSWORD,
+ODDNAAN_PGDATABASE: PGDATABASE,
+} = process.env;
+createConnection({
+type: ""postgres"",
+host: PGHOST,
+port: parseInt(PGPORT || ""3000""),
+username: PGUSER,
+password: PGPASSWORD,
+database: PGDATABASE,
+entities: [Asset, Post, User],",1,ts
+96,"import { WptModule } from './wpt/wpt.module';
+import { ProjectModule } from './project/project.module';
+dotenv.config({ path: join(__dirname, `${process.env.NODE_ENV === 'production' ? '' : '..'}`, `.env.${process.env.NODE_ENV || 'dev'}`) });
+@Module({
+imports: [
+TypeOrmModule.forRoot({
+type: 'postgres',
+host: process.env.DB_HOST,
+port: 5432,
+username: process.env.DB_USER,
+password: process.env.DB_PASS,
+database: process.env.DB_NAME,
+entities: [`${__dirname}/**/entities/**.entity{.ts,.js}`],",1,ts
+97,"const bcrypt = require('bcryptjs')
+const fileStore=require('session-file-store')(session)
+const byc = require('bcrypt');
+var app = express();
+// const { Client } = require('pg');
+// var client = new Client({
+// user: 'postgres',
+// password: process.env.past,
+// database: 'random',
+// host: 'localhost',
+// port:5432
+// })
+// client.connect()",1,ts
+98,"json: true,
+tags: [process.env.NODE_ENV!],
+});
+const mailLogger: any = new Mail({
+level: ""mail"",
+to: <EMAIL>,
+from: <EMAIL>,
+subject: ""Voty Admin Mail"",
+host: mailConfig.host,
+username: mailConfig.auth.user,
+password: mailConfig.auth.pass,
+ssl: true,
+});",1,ts
+99,"headers: {
+Authorization: `Bearer ${this.token}`,
+},
+}
+: {
+auth: {
+username: ""discord"",
+password: this.token,
+},
+};
+for (let i = 0; i < 5; i++) {
+try {
+return (await this.client.get(fixedUrl, conf)).data;",1,ts
